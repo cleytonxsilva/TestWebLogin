@@ -66,7 +66,42 @@ public class BaseTest extends Rote {
 		Assert.assertTrue(data.contains("Informe"));
 	}
 
+	@Test
+	@DisplayName("Caso de Teste 5: Email Correto E Sem Senha")
+	public void ETestEmailCorretoESemSenha(){
+		loginPage.inputEmail.clear();
+		loginPage.inputPassword.clear();
 
+		loginPage.inputEmail.sendKeys("admin@admin.com"+Keys.ENTER);
+		String data = loginPage.textMessage.getText();
+		System.out.println(data);
+		Assert.assertTrue(data.contains("Informe"));
+	}
+
+	@Test
+	@DisplayName("Caso de Teste 6: Sem Email E Senha Correta")
+	public void FTestSemEmailESenhaCorreta(){
+		loginPage.inputEmail.clear();
+		loginPage.inputPassword.clear();
+
+		loginPage.inputPassword.sendKeys("admin@123"+Keys.ENTER);
+		String data = loginPage.textMessage.getText();
+		System.out.println(data);
+		Assert.assertTrue(data.contains("Informe"));
+	}
+	@Test
+	@DisplayName("Caso de Teste 7: Email Correto E Senha Correta")
+	public void GTestEmailCorretoESenhaCorreta(){
+		loginPage.inputEmail.clear();
+		loginPage.inputPassword.clear();
+
+		loginPage.inputEmail.sendKeys("admin@admin.com"+Keys.ENTER);
+		loginPage.inputPassword.sendKeys("admin@123"+Keys.ENTER);
+		String data = loginPage.textMessage.getText();
+		System.out.println(data);
+		chrome.getCurrentUrl().equals("file:///C:/Users/cleyt/Documents/Desenvolvimento/projectMvnUniamerica/sistema/produtos.html?teste=123");
+		Assert.assertTrue(data.contains(""));
+	}
 
 }
 
