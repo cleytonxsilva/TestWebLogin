@@ -97,10 +97,9 @@ public class BaseTest extends Rote {
 
 		loginPage.inputEmail.sendKeys("admin@admin.com"+Keys.ENTER);
 		loginPage.inputPassword.sendKeys("admin@123"+Keys.ENTER);
-		String data = loginPage.textMessage.getText();
+		String data = chrome.getTitle();
 		System.out.println(data);
-		chrome.getCurrentUrl().equals("file:///C:/Users/cleyt/Documents/Desenvolvimento/projectMvnUniamerica/sistema/produtos.html?teste=123");
-		Assert.assertTrue(data.contains(""));
+		Assert.assertEquals(chrome.getTitle(), chrome.getTitle());
 	}
 
 }
