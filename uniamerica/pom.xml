@@ -26,6 +26,12 @@
 			<artifactId>webdriver-support</artifactId>
 			<version>0.9.7376</version>
 		</dependency>
-		<!-- Thanks for using https://jar-download.com -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- Thanks for using https://jar-download.com -->
 	</dependencies>
 </project>
